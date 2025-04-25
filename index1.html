@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Listing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Doctor</h1>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="doctor-search" 
+                    placeholder="Search Symptoms, Doctors, Specialists, Clinics" 
+                    data-testid="autocomplete-input"
+                >
+                <img src="ser.png" class="ser">
+                <div id="suggestions-dropdown" class="dropdown"></div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="filters">
+                <div class="filter-section">
+                    <h3 data-testid="filter-header-sort">Sort by</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                value="fees"
+                                data-testid="sort-fees"
+                            > Fees - Low to High
+                        </label>
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                value="experience"
+                                data-testid="sort-experience"
+                            > Experience - High to Low
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 data-testid="filter-header-speciality">Specialities</h3>
+                    <div id="specialty-filters" class="filter-options">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 data-testid="filter-header-moc">Mode of consultation</h3>
+                    <div class="filter-options">
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="consultation-mode" 
+                                value="video"
+                                data-testid="filter-video-consult"
+                            > Video Consultation
+                        </label>
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="consultation-mode" 
+                                value="clinic"
+                                data-testid="filter-in-clinic"
+                            > In-clinic Consultation
+                        </label>
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="consultation-mode" 
+                                value="all"
+                                checked
+                            > All
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <main>
+                <div id="doctor-list" class="doctor-grid">
+                    <!-- Doctor cards will be inserted here by JavaScript -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
